@@ -39,7 +39,7 @@ const rawToolsSidebar = generateSidebar({
   excludeFiles: ['index.md']
 })
 
-// C. 生成 [工具] 的原始数据 【新增部分】
+// C. 生成
 const rawBotsSidebar = generateSidebar({
   documentRootPath: '.',
   scanStartPath: 'bots',     // 扫描 bots 文件夹
@@ -48,11 +48,21 @@ const rawBotsSidebar = generateSidebar({
   excludeFiles: ['index.md']
 })
 
+// D. 生成
+const rawmusicRankSidebar = generateSidebar({
+  documentRootPath: '.',
+  scanStartPath: 'musicRank',     
+  useTitleFromFileHeading: true,
+  collapsed: false,           // 工具通常不多，建议默认展开
+  excludeFiles: ['index.md']
+})
 
-// D. 分别修复路径
+
+// E. 分别修复路径
 const fixedNotesSidebar = fixSidebarPaths(rawNotesSidebar, '/notes/')
 const fixedToolsSidebar = fixSidebarPaths(rawToolsSidebar, '/tools/')
 const fixedBotsSidebar = fixSidebarPaths(rawBotsSidebar, '/bots/')
+const fixedmusicRankSidebar = fixSidebarPaths(rawmusicRankSidebar, '/musicRank/')
 
 export default defineConfig({
   ignoreDeadLinks: true,
@@ -60,7 +70,7 @@ export default defineConfig({
   title: "OrganxyLab",
   description: "Navigate Thy Veritas.",
 
- head: [
+  head: [
     // 1. 【必须先放这个】配置 Tailwind
     [
       'script',
@@ -75,7 +85,6 @@ export default defineConfig({
         }
       `
     ],
-    // 2. 【然后再放这个】加载 CDN
     [
       'script',
       // 加个 defer，让它别跑那么快，等页面解析差不多了再运行
@@ -87,31 +96,33 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '进入笔记库', link: '/notes/index' },
-      { text: '进入工具库', link: '/tools/index' } 
+      { text: '每周音乐榜', link: '/musicRank/index' },
+      { text: '进入工具库', link: '/tools/index' }
     ],
 
     sidebar: {
       '/notes/': fixedNotesSidebar,
       '/tools/': fixedToolsSidebar,
-      '/bots/': fixedBotsSidebar
+      '/bots/': fixedBotsSidebar,
+      '/musicRank/': fixedmusicRankSidebar,
     },
 
     search: {
       provider: 'local'
     },
-    
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Virtual-NeutroN' }
     ],
 
     footer: {
-      message: '基于 MIT 许可发布',
-      copyright: 'Copyright © 2025 Organxy Lab'
+      message: '基于 MIT 许可发布 | © 2026 Organxy Lab. All rights reserved.',
+      copyright: '<a href="/user_agreement">用户协议</a> | <a href="/privacy_policy">隐私政策</a>'
     },
 
     docFooter: {
-      prev: '上一页', 
-      next: '下一页'  
+      prev: '上一页',
+      next: '下一页'
     },
 
     lastUpdated: {
@@ -121,5 +132,8 @@ export default defineConfig({
         timeStyle: 'short'
       }
     }
-  }
+  },
+
+
+
 })
