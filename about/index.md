@@ -199,6 +199,11 @@ const group8 = [
     avatar: '/members/Toosendanin.png',
     name: 'Toosendanin',
     desc: '“你打过架？什么？逃了？”'
+  },
+    {
+    avatar: '/members/Cimicifugoside.png',
+    name: 'Cimicifugoside',
+    desc: '“为什么你戴眼镜就好凶”'
   }
 ]
 </script>
