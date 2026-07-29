@@ -19,9 +19,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 // ── 图层配置 ──────────────────────────────────
 const layers = [
-  { name: 'bg',  url: '/bg/Cu/Cu_b.jpg',  scale: 1.08, speed: 2.00 },   // 背景 → 慢（物理视差：远物移动幅度小）
-  { name: 'mid', url: '/bg/Cu/Cu_b2.png', scale: 1.03, speed: 1.50 },   // 中景 → 中
-  { name: 'fg',  url: '/bg/Cu/Cu_b3.png', scale: 0.97, speed: 0.5 },   // 近景 → 快
+  { name: 'bg',  url: '/bg/TT/b.png',  scale: 1.03, speed: 0.50 },   // 背景 → 慢（物理视差：远物移动幅度小）
+  { name: 'mid', url: '/bg/TT/b.png', scale: 1.03, speed: 0.50 },   // 中景 → 中
+  { name: 'fg',  url: '/bg/TT/f.png', scale: 1.01, speed: 0.7 },   // 近景 → 快
 ]
 
 // ── 状态 ──────────────────────────────────────
@@ -105,13 +105,13 @@ onUnmounted(() => {
 
   
   /* 亮色模式：轻微白色半透明，让图片柔和发白 */
-  background: rgba(255, 255, 255, 0.61);
+  background: rgba(239, 253, 255, 0.304);
   transition: background 0.5s ease;
 }
 
 /* 深色模式：深色半透明，让图片沉稳发暗 */
 html.dark .color-overlay {
-  background: rgba(31, 31, 31, 0.74);
+  background: rgba(27, 26, 39, 0.553);
 }
 </style>
 

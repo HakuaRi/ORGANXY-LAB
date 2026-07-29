@@ -69,8 +69,8 @@ onUnmounted(() => {
   position: fixed;
   bottom: 30px;
   left: 30px;
-  width: 280px;
-  height: 160px;
+  width: 160px;
+  height: 96px;
   background: #fff;
   border-radius: 12px; /* 圆角矩形 */
   overflow: hidden;

@@ -19,15 +19,15 @@ hero:
       link: /about/
 
 features:
-  - title: 🧪 有机反应表
+  - title: 有机反应表
     details: 收录了目前简单的绝大部分有机反应喵。
     link: /notes/
     linkText: 查看列表
-  - title: 🔧 工具箱
+  - title: 工具箱
     details: 有用吗？我不知道喵。
     link: /tools/
     linkText: 查看列表
-  - title: 📄 某个bot的文档
+  - title: 某个bot的文档
     details: 感觉随时会挂
     link: /bots/
     linkText: 查看说明

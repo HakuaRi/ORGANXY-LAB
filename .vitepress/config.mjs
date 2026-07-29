@@ -51,7 +51,7 @@ const rawBotsSidebar = generateSidebar({
 // D. 生成
 const rawmusicRankSidebar = generateSidebar({
   documentRootPath: '.',
-  scanStartPath: 'musicRank',     
+  scanStartPath: 'music',     
   useTitleFromFileHeading: true,
   collapsed: false,           // 工具通常不多，建议默认展开
   excludeFiles: ['index.md']
@@ -62,7 +62,7 @@ const rawmusicRankSidebar = generateSidebar({
 const fixedNotesSidebar = fixSidebarPaths(rawNotesSidebar, '/notes/')
 const fixedToolsSidebar = fixSidebarPaths(rawToolsSidebar, '/tools/')
 const fixedBotsSidebar = fixSidebarPaths(rawBotsSidebar, '/bots/')
-const fixedmusicRankSidebar = fixSidebarPaths(rawmusicRankSidebar, '/musicRank/')
+const fixedmusicRankSidebar = fixSidebarPaths(rawmusicRankSidebar, '/music/')
 
 export default defineConfig({
   ignoreDeadLinks: true,
@@ -96,15 +96,15 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '进入笔记库', link: '/notes/index' },
-      { text: '每周音乐榜', link: '/musicRank/index' },
-      { text: '进入工具库', link: '/tools/index' }
+      { text: '音乐推荐', link: '/music/index' },
+      { text: '进入工具库', link: '/tools/index' },
     ],
 
     sidebar: {
       '/notes/': fixedNotesSidebar,
       '/tools/': fixedToolsSidebar,
       '/bots/': fixedBotsSidebar,
-      '/musicRank/': fixedmusicRankSidebar,
+      '/music/': fixedmusicRankSidebar,
     },
 
     search: {
